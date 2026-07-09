@@ -6,6 +6,8 @@ import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
 
+import aumkar.github.com.pdunlockinator.exceptions.IncorrectPasswordException;
+
 @Service
 public class MainService {
 
@@ -18,10 +20,10 @@ public class MainService {
             pdDocument.save(unlockedPdfContent);
         }
         catch(InvalidPasswordException e) {
-            throw new IllegalArgumentException("Incorrect password");
+            throw new IncorrectPasswordException("Incorrect password");
         }
         catch (Exception e) {
-            throw new IllegalArgumentException("Something went wrong");
+            throw new RuntimeException(e.getMessage());
         }
 
         return unlockedPdfContent.toByteArray();
