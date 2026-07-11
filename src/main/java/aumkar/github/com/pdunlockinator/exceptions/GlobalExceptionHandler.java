@@ -22,8 +22,8 @@ public class GlobalExceptionHandler {
                 .body(ex.getMessage());
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleUnhandledException(Exception ex) {
+    @ExceptionHandler(InatorException.class)
+    public ResponseEntity<String> handleUnhandledException(InatorException ex) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(ex.getMessage());

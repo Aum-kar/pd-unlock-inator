@@ -17,6 +17,11 @@ public class MainServiceTest {
 
     @BeforeEach
     void setup() {
+        /*
+         * Runs before every @Test method.
+         * Each test gets a fresh MainService instance, ensuring that
+         * changes made by one test cannot affect the outcome of another.
+         */
         service = new MainService();
     }
 
