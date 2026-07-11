@@ -43,7 +43,7 @@ public class MainService {
             throw new IncorrectPasswordException("Incorrect password");
         }
         catch (Exception e) {
-            log.error("Unknown exception: {}", e.getMessage());
+            log.error("Unexpected error while unlocking PDF: {}\n{}", e.getClass(), e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
 
