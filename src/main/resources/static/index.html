@@ -3,63 +3,140 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Unlocker</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .inner-container {
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .inner-container input {
-            padding: 10px 16px;
-            border: 1px solid #BBB;
-        }
-
-        .inner-container label {
-            margin-left: 16px;
-        }
-
-        .input-container {
-            display: flex;
-        }
-
-        .lbl-input-container {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>PDF Unlock Inator</h1>
-    <form action="http://localhost:8080/unlock" method="post" enctype="multipart/form-data">
-        <div class="inner-container">
-            <span class="lbl-input-container">
-                <label for="file">Select File</label>
-                <input type="file" name="file" id="file" required>
-            </span>
-            <span class="lbl-input-container">
-                <label for="file-password">PDF Password</label>
-                <input type="password" name="password" id="file-password" required>
-            </span>
-            <span class="input-container">
-                <input type="reset" value="Reset">
-                <input type="submit" value="Submit">
-            </span>
-        </div>
-    </form>
+    <header>
+        <h1>PDF Unlocker</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <form action="http://localhost:8080/unlock" method="post" enctype="multipart/form-data">
+                <div class="form-header">
+                    <label>Unlock password protected PDFs</label>
+                </div>
+                <div class="form-body">
+                    <span class="form-group">
+                        <label for="file">Select File</label>
+                        <input type="file" name="file" id="file" required>
+                    </span>
+                    <span class="form-group">
+                        <label for="file-password">PDF Password</label>
+                        <input type="password" name="password" id="file-password" required>
+                    </span>
+                    <span class="input-container">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Unlock" class="primary">
+                    </span>
+                </div>
+            </form>
+        </section>
+
+        <article>
+            <h2>Introduction</h2>
+
+            <p>This tool removes password protection from PDF files so they can be opened without entering a password again. Simply upload your protected PDF, enter its password, and download the unlocked copy.</p>
+            <p>Your privacy comes first. The file is processed only to remove its password protection and is immediately returned to you. No user accounts are required, no personal information is collected, and your files are not stored after processing.</p>
+            <hr>
+
+            <h2>How to use</h2>
+
+            <ol>
+                <li>Choose a password-protected PDF file.</li>
+                <li>Enter the password used to open the PDF.</li>
+                <li>Click Unlock.</li>
+                <li>If the password is correct, your browser will automatically download an unlocked copy of the
+                    document.</li>
+            </ol>
+
+            <hr>
+
+            <h2>How it works</h2>
+            <p>Your PDF is uploaded to the server and checked to make sure it is a valid PDF file with content. The
+                provided password is then used to open the document. If the password is correct, the password protection
+                is removed and a new unlocked PDF is created. The unlocked file is immediately returned as a download.
+            </p>
+
+            <hr>
+
+            <h2>Error messages</h2>
+            <ul>
+                <li><b>File has no content:</b> The selected file is empty.</li>
+                <li><b>File is not PDF:</b> The uploaded file is not a PDF document.</li>
+                <li><b>Incorrect password:</b> The password does not match the PDF.</li>
+                <li><b>Unexpected error:</b> An unexpected problem occurred while processing the file.</li>
+            </ul>
+
+            <hr>
+
+            <h2>Technologies</h2>
+            <div class="container">
+            <table>
+                <tr>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>Java 21</td>
+                    <td>Programming language used to build the application.</td>
+                </tr>
+                <tr>
+                    <td>Spring Boot (version 4.1.0)</td>
+                    <td>Handles HTTP requests, file uploads, and application configuration.</td>
+                </tr>
+                <tr>
+                    <td>Apache PDFBox (version 3.0.7)</td>
+                    <td>Opens password-protected PDFs and removes security.</td>
+                </tr>
+                <tr>
+                    <td>JUnit 5</td>
+                    <td>Used for unit testing.</td>
+                </tr>
+                <tr>
+                    <td>Spring Test (MockMvc)</td>
+                    <td>Tests the web endpoints without starting a full server.</td>
+                </tr>
+                <tr>
+                    <td>SLF4J</td>
+                    <td>Records application events and errors for debugging.</td>
+                </tr>
+            </table>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+
+        <ul>
+            <h3>Technologies</h3>
+            <li><a href="https://openjdk.org/projects/jdk/21/">Java OpenJDK 21</a></li>
+            <li><a href="https://spring.io/projects/spring-boot">Spring Boot Docs</a></li>
+            <li><a href="https://docs.junit.org/5.5.0/user-guide/">JUnit 5 User Guide</a></li>
+            <li><a href="https://pdfbox.apache.org/">Apache PDFBox</a></li>
+            <li><a href="https://www.slf4j.org/">SLF4J</a></li>
+        </ul>
+
+        <ul>
+            <h3>My Profile</h3>
+            <li><a href="https://github.com/Aum-kar/pd-unlock-inator" target="_blank">View source code</a></li>
+            <li><a href="https://www.github.com/aum-kar" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/omkar-patil-383b20254" target="_blank">LinkedIn Profile</a></li>
+        </ul>
+        
+        <ul>
+            <h3>Other Projects</h3>
+            <li><a href="https://github.com/Aum-kar/statement-trail">Statement Trail</a></li>
+            <li><a href="https://github.com/Aum-kar/todoapp">Todo Frontend App</a></li>
+            <li><a href="https://github.com/Aum-kar/flickbase">Flickbase</a></li>
+        </ul>
+        
+    </footer>
 </body>
 
 </html>
