@@ -2,6 +2,7 @@ package aumkar.github.com.pdunlockinator;
 
 import aumkar.github.com.pdunlockinator.exceptions.IncorrectPasswordException;
 import aumkar.github.com.pdunlockinator.exceptions.NotAPdFileException;
+import aumkar.github.com.pdunlockinator.service.MainService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockMultipartFile;

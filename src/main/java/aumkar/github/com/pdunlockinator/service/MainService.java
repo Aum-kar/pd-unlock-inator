@@ -1,4 +1,4 @@
-package aumkar.github.com.pdunlockinator;
+package aumkar.github.com.pdunlockinator.service;
 
 import aumkar.github.com.pdunlockinator.exceptions.NotAPdFileException;
 import lombok.extern.slf4j.Slf4j;
