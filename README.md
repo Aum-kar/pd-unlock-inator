@@ -2,6 +2,10 @@
 
 A lightweight web application that removes password protection from PDF files. Upload a protected PDF, enter the correct password, and download an unlocked copy directly from your browser.
 
+## Live Demo
+
+https://pd-unlock-inator-1.onrender.com
+
 ## Features
 
 * Upload password protected PDF files
@@ -141,7 +145,3 @@ docker rm pd-unlock-inator
 * Docker deployment
 * Dark mode
 * Improved mobile layout
-
-## License
-
-This project is available under the MIT License.
